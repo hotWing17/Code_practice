@@ -32,22 +32,6 @@ def main():
     html = getHTMLText(url)
     fillUnivList(uinfo,html)
     printUnivList(uinfo,20)     #20 univs
+    
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
