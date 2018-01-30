@@ -1,0 +1,12 @@
+sudo apt-get install unity-tweak-tool		//安装unity-tweak-tool(主题美化工具)
+
+sudo add-apt-repository ppa:noobslab/macbuntu	//安装 Flatabulous 主题
+sudo apt-get update
+sudo apt-get install macbuntu-os-icons-lts-v7
+sudo apt-get install macbuntu-os-ithemes-lts-v7
+
+sudo add-apt-repository ppa:noobslab/themes	//扁平化主题(终端取消滚动条)
+sudo apt-get update
+sudo apt-get install flatabulous-theme
+
+//安装docky(安装类mac滚动条)

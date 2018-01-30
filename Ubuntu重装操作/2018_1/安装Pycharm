@@ -1,0 +1,21 @@
+1、上官网下载安装包，解压到/opt 目录下
+
+2、创建快捷方式方法
+终端输入：sudo gedit /usr/share/applications/Pycharm.desktop
+粘贴模板：
+[Desktop Entry]
+Type=Application
+Name=Pycharm
+GenericName=Pycharm3
+Comment=Pycharm3:The Python IDE
+Exec=sh xxxx/bin/pycharm.sh
+Icon=xxxx/bin/pycharm.png
+Terminal=pycharm
+Categories=Pycharm;
+
+3、设置Pycharm主题
+File/setting
+主题：appearation
+
+4、安装IDLE
+sudo apt-get install idle

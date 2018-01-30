@@ -1,0 +1,6 @@
+http://blog.csdn.net/allenirving/article/details/64920798
+//安装pip不可以的话，就用这一个网页的命令（如下）
+//可以先查看Python版本，Python是什么版本就会安装什么版本的pip
+
+wget https://bootstrap.pypa.io/get-pip.py  
+sudo python get-pip.py 

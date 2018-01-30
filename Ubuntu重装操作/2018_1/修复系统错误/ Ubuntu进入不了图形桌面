@@ -1,0 +1,11 @@
+# Ubuntu16出现黑屏问题，进入不了图形桌面
+网址：http://blog.csdn.net/accumulate_zhang/article/details/52751633
+
+解决方法：
+1.在上图进入系统之后，按ctrl+alt+f1(f1到f6都可以进入命令行，f7是退出命令行)，输入账号，密码。
+
+2.输入命令sudo apt-get install ubuntu-desktop,再输入一次密码
+
+3.如果出现提示 dpkg 出现问题，需要运行 sudo dpkg --configure -a 来修复,然后大概会安装一个27M的文件
+
+4.安装完成后，再reboot

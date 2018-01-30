@@ -1,0 +1,10 @@
+vim /etc/ssh/sshd_config	#修改SSH端口
+service sshd restart		#重启ssh服务
+
+mentohust					#启动mentohust
+ssh root@67.209.187.107 -p 27847		#Ubuntu启动SSH服务
+
+sudo du -sh /* --exclude proc			#查看硬盘使用情况
+dpkg --list					#浏览已安装程序清单
+sudo apt-get remove				#卸载程序
+

@@ -1,0 +1,22 @@
+http://blog.csdn.net/ZuoYa130528/article/details/70241058?locationNum=2&fps=1
+
+http://blog.csdn.net/Lee_J_R/article/details/54019691?locationNum=3&fps=1
+
+https://help.fyzhuji.com/index.php/archives/94/			#OMG配置
+
+https://github.com/FelisCatus/SwitchyOmega/releases/		#SS科学上网浏览器配置（github）!!!
+
+
+#SS服务启动命令
+sslocal -c /etc/shadowsocks/config.json  start  #ubuntu运行shadowsocks
+ssserver -c /etc/shadowsocks.json -d start	#服务器端启动shadowsocks
+#shadowsocks.json文件内容
+{
+    "server":"67.209.187.107",
+    "server_port":443,
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"XXXXXXXXX",
+    "timeout":600,
+    "method":"aes-256-cfb"
+}
