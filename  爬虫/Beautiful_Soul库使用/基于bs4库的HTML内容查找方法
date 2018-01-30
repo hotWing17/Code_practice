@@ -1,0 +1,44 @@
+#信息提取的一般方法（标记+信息）
+#基于bs4库的HTML内容查找方法
+#融合方法：结合形式解析与搜索方法，提取关键信息（需要标记解析器及文本查找函数）
+>>> for link in soup.find_all('a'):		#找到所有a标签，获取‘href’标记的信息(返回url)
+	print(link.get('href'))
+
+
+
+！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+#<>.find_all(name,attrs,recursive,string...)			#返回一个列表类型，存储查找的结果
+#soup(..) 等价于 soup.find_all(..)						#因为特别常用
+
+name:对标签名称的检索字符串
+1、soup.find_all('a')
+2、soup.find_all(['a','b'])
+3、for tag in soup.find_all(True)	#输出所有标签名称
+	print(tag.name)
+	
+	
+attrs:对标签属性值的检索字符串，可标注属性检索
+1、soup.find_all('p','course')	#查找p标签下带‘course’属性的标签
+2、soup.find_all(id='link1')		#查找id域的属性为‘link1’的标签
+
+
+recursive:是否对子孙全部检索，默认True
+1、soup.find_all('a',recursive=False)
+
+
+string:<>..</>中字符串域的检索字符串
+1、soup.find_all(string="Basic Python")
+
+
+
+
+#find扩展方法
+1、<>.find()							#搜索只返回一个结果，字符串类型
+2、<>.find()_parents()				#在先辈节点中搜索，返回列表类型
+3、<>.find()_parent()				#在先辈节点中返回一个结果，字符串类型
+4、<>.find()_next_siblings()			#在前序平行节点中搜索，返回列表类型
+5、<>.find()_next_sibling()
+6、<>.find()_previous_siblings()
+7、<>.find()_previous_sibling()
+
+

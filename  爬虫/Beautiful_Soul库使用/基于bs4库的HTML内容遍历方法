@@ -1,0 +1,33 @@
+>>>import requests
+>>>r = requests.get("https://www.python123.io/ws/demo.html")
+>>>demo = r.text
+>>>demo
+>>>from bs4 import BeautifulSoup
+>>>soup = BeautifulSoup(demo,'html.parser')
+
+#标签树的下行遍历
+.contents		#（返回的是列表类型）子节点的列表，将<tag>所有儿子节点存入列表(数组)
+.children		#（迭代类型，用于for循环）与上面类似
+.descendants	#（迭代类型，用于for循环）子孙节点，包含全部子孙节点
+>>>for child in soup.body.children:	#遍历儿子节点的结构
+	print(child)
+	
+	
+	
+#标签树的上行遍历
+.parent			#节点的父亲标签
+.parents		#（迭代类型，用于for循环）节点先辈标签，用于循环遍历先辈节点
+>>>for parent in soup.a.parents:
+	if parent is None:
+		print(parent)
+	else:
+		print(parent.name)
+		
+		
+#标签树的平行遍历（平行遍历发生在同一个父亲节点下的各节点间）
+.next_sibling		#返回按照HTML文本顺序的下一个平行节点标签
+.previous_sibling	#返回按照HTML文本顺序的上一个平行节点标签
+.next_siblings		#（迭代类型，用于for循环）后续所有平行节点标签
+.previous_siblings	#（迭代类型，用于for循环）前续所有平行节点标签
+		
+

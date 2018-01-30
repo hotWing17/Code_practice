@@ -1,0 +1,19 @@
+pip install beautifulsoup4		#Beautiful_Soup库的安装
+
+from bs4 import BeautifulSoup	#Beautiful_Soup库的使用
+soup = BeautifulSoup(demo,"html.parser")	
+soup = BeautifulSoup(open("/home/opt/1.html"),'html.parser')
+print(soup.prettify())	#第一个参数：需要bs4解析的HTML页面信息(.html后缀)#第二个参数："html.parser"解析使用的解析器
+
+#Beautiful_Soup库五种元素（标签，名字，属性，字符串，注释）
+soup.title				#获取页面的title标签
+soup.a.name				#获取标签的名字
+soup.a.parent.name		#获取标签上一级标签的名字
+tag = soup.a			#定义一个标签，获取页面的a标签
+tag.attrs				#获取标签属性（是一个字典来的）
+tag.attrs['id']			#获取该标签的指定属性('id')的值
+soup.a.string			#获取该标签表达的信息，下同
+soup.p.string
+
+
+

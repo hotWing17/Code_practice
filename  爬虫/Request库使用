@@ -1,0 +1,32 @@
+r = requests.get("http://www.baidu.com")	#抓取网页内容
+#requests为Response对象，get为request对象
+r.headers					#返回get页面的头部信息
+
+#Responses对象的属性
+r.status_code			#查看请求的状态码（200）
+r.text					#url对应的页面内容
+r.encoding				#从header猜测的内容编码方式
+r.apparent_encoding		#从内容分析编码方式（备选编码）
+r.content				#响应内容的二进制形式
+
+#Requests库的异常(6种)
+#Requests和HTTP协议的六种方法一一对应
+#主要掌握Requests以下两种方法
+requests.get()
+requests.head()
+
+#r.request.headers		#查询发给url的头信息
+#r.request.url			#查看提交给网页的url是什么
+
+
+
+
+
+
+
+
+
+
+
+
+
