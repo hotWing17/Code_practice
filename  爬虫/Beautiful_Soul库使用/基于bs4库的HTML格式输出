@@ -1,0 +1,13 @@
+#基于bs4库的HTML格式输出(如何让<html>内容更加友好的显示)
+#.prettify()方法，给标签添加换行符，更清晰的打印
+
+#以下为.prettify()方法的一个例子
+
+>>> soup1 = BeautifulSoup("<p>中文</p>",'html.parser')
+>>> soup1.p.string
+'中文'
+>>> print(soup1.p.prettify())
+<p>
+ 中文
+</p> 
+
