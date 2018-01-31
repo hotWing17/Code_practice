@@ -1,6 +1,0 @@
-requests.request(method,url,参数)
-requests.get(url,params=None,参数)
-参数headers:字典，HTTP定制头
->>> hd = {'user-agent':'Chrome/10'}
->>> r = requests.request('POST','http://www.baidu.com',headers=hd)
-#模拟指定浏览器和版本向url进行访问
