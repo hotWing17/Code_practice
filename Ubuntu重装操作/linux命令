@@ -6,5 +6,6 @@ ssh root@67.209.187.107 -p 27847		#Ubuntu启动SSH服务
 
 sudo du -sh /* --exclude proc			#查看硬盘使用情况
 dpkg --list					#浏览已安装程序清单
-sudo apt-get remove				#卸载程序
-
+sudo apt-get remove			#卸载程序
+ps -ef						#查看运行程序
+kill PID					#结束指定进程（同上）

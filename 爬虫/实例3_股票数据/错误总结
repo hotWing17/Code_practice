@@ -1,0 +1,5 @@
+#以下两函数不能通用，下面那个需要在BeautifulSoup内部才能使用
+<tag>.string
+soup.a.text
+
+#注意方法的缩进问题！！

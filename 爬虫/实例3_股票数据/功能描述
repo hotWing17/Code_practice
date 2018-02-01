@@ -1,0 +1,20 @@
+#定向爬虫：仅对输入URL进行爬取，不扩展爬取
+#目标：获取上交所和深交所所有股票的名称和交易信息
+#输出：保存到文件中
+#技术路线：requests-bs4-re
+
+候选网站：
+	新浪股票：http://finance.sina.com.cn/stock/
+	百度股票：https://gupiao.baidu.com/stock/	#结果显示这个网站的价格信息放在html页面中，适合
+	#选取原则：股票信息静态存在与HTML页面中，非js代码生成，没有Robots协议限制
+获取股票列表：http://quote.eastmoney.com/stocklist.html(东方财富网)
+
+#查看URL
+	https://gupiao.baidu.com/stock/sz000005.html		#注意：个股编号在这里
+
+#步骤
+1、从东方财富网获取股票列表
+2、根据股票列表逐个到百度股票获取个股信息
+3、将结果存储到文件
+
+

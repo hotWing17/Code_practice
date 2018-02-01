@@ -3,7 +3,7 @@
 import requests
 import os									#引入文件操作库
 url = "http://image.nationalgeographic.com.cn/2018/0112/20180112011553162.jpg"
-root = "/home/dc/桌面/ 爬虫/第一周实例/图片/"			#存储路径
+root = "/home/dc/桌面/爬虫/第一周实例/图片/"			#存储路径
 path = root + url.split('/')[-1]					#截取原名字（url最后字符串）作为爬取后的图片名字
 try:
 	if not os.path.exists(root):			#判断当前根目录是否存在
