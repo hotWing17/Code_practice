@@ -1,0 +1,17 @@
+#教程网址
+http://blog.csdn.net/qq_35523593/article/details/78545530
+
+#两种操作前需要
+先切换到root用户，避免权限问题，然后切换到/（根目录）
+
+#备份
+tar -cvpzf /media/dc/D4784B1E784AFF2C/MyDisk/ubuntu_backup@`date +%Y-%m+%d`.tar.gz --exclude=/proc --exclude=/tmp --exclude=/boot --exclude=/home --exclude=/lost+found --exclude=/media --exclude=/mnt --exclude=/run /
+
+#还原
+tar -xvpzf /media/dc/D4784B1E784AFF2C/MyDisk/备份文件名字.tar.gz -C /
+	
+	#注意：Note：因为 tar还原是只会覆盖相同的文件，但是这种方法只是恢复备份时的文件，就是说如果某些文件丢失或损坏了，这样可以恢复修复这些文件，但不能删除自备份到恢复前这期间所生成的其它文件，说白了就是假如你备份系统时有1234这四个文件，如果三天后，由于某些原因变成了1234’5（4改变了），你恢复后，就会变成12345，其中4’恢复成备份时的文件，5保留。所以大家要是想彻底还原成备份时候的样子最好彻底删除根目录下的所有文件，然后再还原，这样就可以还原成备份时的样子了。 
+删除整个文件系统，比如运行命令rm -fr /*，那么你还原系统后一定要把你之前没有备份的目录手动创建，不然重启系统是有问题的。
+
+	#还原完成后还在新加下面的语句
+	mkdir proc tmp lost+found media mnt run
