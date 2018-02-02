@@ -1,0 +1,9 @@
+1、隐藏开机选择界面
+
+
+　　1、sudo gedit /etc/default/grub
+　　　　GRUB_HIDDEN_TIMEOUT=0
+　　　　GRUB_HIDDEN_TIMEOUT_QUIET=true //隐藏开机选择界面
+　　　　GRUB_TIMEOUT=0 // 设置开机选择界面等待时间，0 不显示
+
+　　sudo update-grub // update grub

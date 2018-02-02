@@ -1,5 +1,0 @@
-https://www.cnblogs.com/jokie/p/6933546.html
-#ubuntu16.04设置python3为默认及一些库的安装
-
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
