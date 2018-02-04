@@ -1,0 +1,12 @@
+#教程
+http://blog.csdn.net/sh21_/article/details/52751367
+
+
+#/etc/profile中设置环境变量
+export JAVA_HOME=/目录
+export JRE_HOME=/目录/jre
+export CALSSPATH=.:$CLASSPATH:$JAVA_HOME/lib:$JRE_HOME/lib
+export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+
+#使环境变量有效
+source /etc/profile
