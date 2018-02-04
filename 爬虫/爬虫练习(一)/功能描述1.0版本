@@ -1,0 +1,8 @@
+#爬取并且下载目标网站的图片(1.0版本只下载一个套图)
+
+#目标网站：http://pic.yxdown.com/list/2_0_1.html
+
+#步骤
+1、获取此套图的HTML内容	getHTMLText()
+2、从套图html内容解析出每张图片下载地址列表	getPictureUrl_List()
+3、循环下载每一张图片		downloadPicture()

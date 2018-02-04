@@ -17,7 +17,7 @@ def fillUnivList(ulist,html):   #将页面放到列表中‘ulist’
         if isinstance(tr,bs4.element.Tag):          #此语句为了排除非Tag标签
             TD = tr.find('td')                      #tbody下有一个大’td‘标签，里面包含多个小’td‘标签
             tds = TD('td')                          #将所有'td'标签存入 列表’tds‘
-            ulist.append([TD.contents[0],tds[0].div.string,tds[2].string])                       #append()在列表中加入值(大学名字，排名，总分)
+            ulist.append([TD.contents[0],tds[0].div.string,tds[2].string])             #append()在列表中加入值(大学名字，排名，总分)
     #pass                        #不做任何操作的语句（写框架的时候使用）
 
 def printUnivList(ulist,num):

@@ -15,5 +15,7 @@ tag.attrs['id']			#获取该标签的指定属性('id')的值
 soup.a.string			#获取该标签表达的信息，下同
 soup.p.string
 
+if isinstance(tr,bs4.element.Tag):          #此语句为了排除非Tag标签
+
 
 

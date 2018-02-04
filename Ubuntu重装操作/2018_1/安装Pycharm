@@ -1,4 +1,4 @@
-1、上官网下载安装包，解压到/opt 目录下
+1、上官网下载安装包，解压到安装目录下 目录下
 
 2、创建快捷方式方法
 终端输入：sudo gedit /usr/share/applications/Pycharm.desktop
@@ -12,6 +12,7 @@ Exec=sh xxxx/bin/pycharm.sh
 Icon=xxxx/bin/pycharm.png
 Terminal=pycharm
 Categories=Pycharm;
+
 
 3、设置Pycharm主题
 File/setting

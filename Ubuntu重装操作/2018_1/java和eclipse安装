@@ -14,3 +14,16 @@ source /etc/profile
 #安装eclipse和中文包教程
 	#安装eclipse教程:http://jingyan.baidu.com/article/e2284b2b60aceee2e6118d3b.html	
 	#中文包安装:https://jingyan.baidu.com/article/d3b74d64cf410f1f77e6093b.html
+	
+#创建快捷方式
+#修改文件sudo gedit /usr/share/applications/eclipse.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+Comment=Eclipse IDE
+Exec=/XXXXX/eclipse		#XXX表示完整路径！！！！
+Icon=/XXXXX/icon.xpm
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;Development;

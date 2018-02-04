@@ -8,7 +8,7 @@ path = root + url.split('/')[-1]					#截取原名字（url最后字符串）作
 try:
 	if not os.path.exists(root):			#判断当前根目录是否存在
 		os.mkdir(root)						#不存则创建目录
-	if not os.path.exists(path)				#判断文件是否存在，不存在就要执行操作
+	if not os.path.exists(path):			#判断文件是否存在，不存在就要执行操作
 		r = requests.get(url)
 		with open(path,'wb') as f:			#对二进制文件操作时使用‘wb’,
 			f.write(r.content)				#图片是二进制形式的文件
