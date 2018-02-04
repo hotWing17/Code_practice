@@ -10,3 +10,7 @@ export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 
 #使环境变量有效
 source /etc/profile
+
+#安装eclipse和中文包教程
+	#安装eclipse教程:http://jingyan.baidu.com/article/e2284b2b60aceee2e6118d3b.html	
+	#中文包安装:https://jingyan.baidu.com/article/d3b74d64cf410f1f77e6093b.html
