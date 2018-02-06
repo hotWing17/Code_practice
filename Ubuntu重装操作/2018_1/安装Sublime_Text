@@ -1,0 +1,52 @@
+#参考网站：https://www.cnblogs.com/hupeng1234/p/6957623.html
+
+#安装
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+#卸载
+#sudo apt-get remove sublime-text-installer
+
+#取消自动更新
+#安装Packeage Control
+
+#注册码
+—– BEGIN LICENSE —–
+Anthony Sansone
+Single User License
+EA7E-878563
+28B9A648 42B99D8A F2E3E9E0 16DE076E
+E218B3DC F3606379 C33C1526 E8B58964
+B2CB3F63 BDF901BE D31424D2 082891B5
+F7058694 55FA46D8 EFC11878 0868F093
+B17CAFE7 63A78881 86B78E38 0F146238
+BAE22DBB D4EC71A1 0EC2E701 C7F9C648
+5CF29CA3 1CB14285 19A46991 E9A98676
+14FD4777 2D8A0AB6 A444EE0D CA009B54
+—— END LICENSE ——
+
+#ubuntu下解决sublime text3无法输中文问题
+#教程：https://my.oschina.net/lee2013/blog/396855
+	如果出现错误(找不到某个文件的问题)，则输入以下命令后再编译
+	sudo apt-get install libgtk2.0-dev
+	(鼠标的那个)六、为了使用鼠标右键打开文件时能够使用中文输入，还需要修改文件sublime-text.desktop的内容（应该是‘-’，不是下划线‘_’）
+	
+#sublime text 侧边栏字体大小修改
+http://blog.csdn.net/wangtaoking1/article/details/41892457
+
+#配置python3运行环境
+教程:http://blog.csdn.net/zxgdll/article/details/69524635
+	
+#安装的插件：
+1、BracketHighlighter（括号配对）
+2、Alignment（等号对齐）
+3、Doc​Blockr（完美注释）
+4、THEME – SODA（还要配置的，加这一句："theme": "Soda Dark.sublime-theme",）
+5、SidebarEnhancements（侧边栏加强）
+6、IMESupport（windows下中文输入法光标跟随）
+7、AutoFileName（自动寻找文件名）
+8、ConvertToUTF8
+9、ChineseLocalization（汉化）
+10、PackageResourceViewer （用来修改“侧边栏字体大小”）
+11、Anaconda(代码补全)	#教程：https://jingyan.baidu.com/article/f25ef25445b999482c1b82b4.html
+
