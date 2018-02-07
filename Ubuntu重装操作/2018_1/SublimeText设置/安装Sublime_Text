@@ -41,12 +41,13 @@ http://blog.csdn.net/wangtaoking1/article/details/41892457
 1、BracketHighlighter（括号配对）
 2、Alignment（等号对齐）
 3、Doc​Blockr（完美注释）
-4、THEME – SODA（还要配置的，加这一句："theme": "Soda Dark.sublime-theme",）
+4、THEME – SODA（还要配置的，加这一句："theme": "Soda Dark.sublime-theme",）(修改字体："font_face": "Yahei Consolas Hybrid",//更换字体，适应中文)
 5、SidebarEnhancements（侧边栏加强）
 6、IMESupport（windows下中文输入法光标跟随）
 7、AutoFileName（自动寻找文件名）
 8、ConvertToUTF8
 9、ChineseLocalization（汉化）
 10、PackageResourceViewer （用来修改“侧边栏字体大小”）
-11、Anaconda(代码补全)	#教程：https://jingyan.baidu.com/article/f25ef25445b999482c1b82b4.html
+11、sublimecodeintel(代码补全)	#教程：https://www.liudon.org/1337.html
+12、autopep8
 

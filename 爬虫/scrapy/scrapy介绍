@@ -1,0 +1,6 @@
+#产生步骤
+1、建立一个Scrapy爬虫工程(scrapy startproject 'name')
+2、在工程中产生一个Scrapy爬虫(scrapy genspider demo python123.io)('demo':爬虫名字；'python123.io':爬取的网站)
+3、
+4、
+
