@@ -1,7 +1,8 @@
 {
 	"auto_complete_commit_on_tab": true,//选中自动补全代码“Tab”
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-	"font_face": "DejaVu Sans Mono",
+	//"font_face": "DejaVu Sans Mono",
+	"font_face": "Microsoft Yahei Mono",	//等宽字体
 	"font_size": 10.5,
 	"highlight_line": true,
 	"ignored_packages":

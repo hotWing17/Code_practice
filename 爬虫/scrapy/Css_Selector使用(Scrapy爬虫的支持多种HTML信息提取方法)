@@ -1,0 +1,8 @@
+#Scrapy爬虫提取信息方法(Scrapy爬虫支持多种HTML信息提取方法)
+主要介绍CSS Selector
+
+#CSS Selector的基本使用
+#为了提取真实的原文数据，需要调用 .extract() 方法如下
+#没有extract()函数，返回的一个'SelectorList'列表
+#有extract()返回的是该内容（a）
+a = <HTML>.css('a::attr(href)').extract()

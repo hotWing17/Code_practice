@@ -1,0 +1,18 @@
+#Scrapy爬虫
+#目标：获取上交所和深交所所有股票的名称和交易信息
+#输出：保存到文件中
+#技术路线：Scrapy
+
+候选网站：
+	新浪股票：http://finance.sina.com.cn/stock/
+	百度股票：https://gupiao.baidu.com/stock/	#结果显示这个网站的价格信息放在html页面中，适合
+	#选取原则：股票信息静态存在与HTML页面中，非js代码生成，没有Robots协议限制
+获取股票列表：http://quote.eastmoney.com/stocklist.html(东方财富网)
+
+步骤1：创建一个工程和Spider模板
+	步骤2：编写Spider
+		*配置stocks.py文件
+		*修改对返回页面的处理
+		*修改对新增URL爬取请求的处理
+	步骤3：编写Item Pipeline(对Spider提取信息后续的处理作相关的定义)
+	步骤4：优化配置策略

@@ -1,6 +1,29 @@
-#产生步骤
-1、建立一个Scrapy爬虫工程(scrapy startproject 'name')
+#Scrapy爬虫框架的产生步骤
+1、建立一个Scrapy爬虫工程(scrapy startproject 'name')('name':表示工程的名字)
 2、在工程中产生一个Scrapy爬虫(scrapy genspider demo python123.io)('demo':爬虫名字；'python123.io':爬取的网站)
-3、
-4、
+3、配置产生的spider爬虫
+4、运行爬虫，爬取网页(scrapy crawl demo)
 
+
+
+#关键字yield
+	yield <------> 生成器
+	生成器：是一个不断产生值的函数
+	包含yield语句的函数是一个生成器
+	生成器每次产生一个值(yield)，函数被冻结，被唤醒后在产生一个值
+		#实例：生成器写法（相比普通一次列出全部结果来说：节省空间、反应迅速、）
+			def gen(n):
+				for i in range(n):
+					yield i**2
+
+
+#Scrapy爬虫的使用步骤
+	步骤1：创建一个工程和Spider模板
+	步骤2：编写Spider
+	步骤3：编写Item Pipeline(对Spider提取信息后续的处理作相关的定义)
+	步骤4：优化配置策略
+
+		Scrapy爬虫的数据类型(涉及三个类):
+			1、Request类: 代表向网络上提交请求的内容
+			2、Response类: 代表从网络中爬取内容的封装类
+			3、Item类:由Spider产生的信息封装的类(Item对象表示一个从HTML页面中提取的信息内容；Item类类似字典类型)
