@@ -2,3 +2,11 @@
 align			#对齐
 autofilename	#文件路径名
 open in browser	#浏览器打开
+
+
+#配置文件
+{
+    "view-in-browser.customBrowser": "chrome",
+    "workbench.colorTheme": "Monokai",
+    "editor.fontSize": 13,
+}
