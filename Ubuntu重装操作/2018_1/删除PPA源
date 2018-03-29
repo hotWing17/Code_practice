@@ -1,0 +1,3 @@
+更新sudo apt update出错时，查看是否是PPA源出错，如果是，应该删除对应的PPA源，然后更新
+对应位置：/etc/apt/sources.list.d
+
