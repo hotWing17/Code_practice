@@ -1,0 +1,4 @@
+sudo apt-get install smplayer
+
+//卸载原来的
+apt purge totem

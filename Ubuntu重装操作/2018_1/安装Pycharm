@@ -8,10 +8,12 @@ Type=Application
 Name=Pycharm
 GenericName=Pycharm3
 Comment=Pycharm3:The Python IDE
-Exec=sh xxxx/bin/pycharm.sh
-Icon=xxxx/bin/pycharm.png
+Exec=sh home/dc/xxxx/bin/pycharm.sh
+Icon=home/dc/xxxx/bin/pycharm.png
 Terminal=pycharm
 Categories=Pycharm;
+
+赋予权限：sudo chmod +x idea.desktop
 
 
 3、设置Pycharm主题
