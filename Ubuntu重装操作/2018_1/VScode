@@ -7,6 +7,11 @@ open in browser	#浏览器打开
 #配置文件
 {
     "view-in-browser.customBrowser": "chrome",
-    "workbench.colorTheme": "Monokai",
     "editor.fontSize": 13,
+    "window.zoomLevel": 0,
+
+    "python.pythonPath": "~/anaconda3/bin/python",
+
+    // 如果启用，会在打开文件时尝试猜测字符集编码。也可以根据语言配置此设置。
+    "files.autoGuessEncoding": true
 }

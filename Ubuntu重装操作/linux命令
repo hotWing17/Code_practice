@@ -9,3 +9,5 @@ dpkg --list					#浏览已安装程序清单
 sudo apt-get remove			#卸载程序
 ps -ef						#查看运行程序
 kill PID					#结束指定进程（同上）
+su root 					#获得 root 权限。
+fdisk -l 					#查看当前分区状况
