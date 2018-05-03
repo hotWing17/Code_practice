@@ -1,4 +1,15 @@
-申请学生使用
+安装：申请学生使用
 
 手把手教你设置 IntelliJ IDEA 的彩色代码主题
-https://blog.csdn.net/qq_35246620/article/details/79056530
+URL：https://blog.csdn.net/qq_35246620/article/details/79056530
+
+使用JUnit单元测试方法
+URL：
+https://blog.csdn.net/antony9118/article/details/51736135
+https://www.cnblogs.com/huaxingtianxia/p/5563111.html
+
+1、设置->plugins ->Browse... ->Junit Generator V2.0安装，Junit也要安装
+2、配置好环境,生成测试类或者方法
+	方法一：@Test直接写测试用例 -> 右键直接开始运行
+	方法二：alt+insert -> 选择Junit 4 ->在目标文件下生成测试类 -> ctrl+shift+F10运行测试类
+	方法三(简单版)：Ctrl + Shift + T -> 选择JUnit4
