@@ -1,4 +1,3 @@
-
 [TOC]
 # JavaSE学习笔记
 ---
@@ -107,6 +106,11 @@ public void sayHello(int i, String ... args);
 - 只能处理引用类型变量
 - 有些类(如“String”)重写了equals()方法
 - **String类**：创建的常量放在“字符串常量池”里面
+```java
+String str1 = "AA"  //1和2都指向字符串常量池
+String str2 = "AA"
+String str3 = new String("AA")  // 3指向对象的地址，对象里面的String属性还是指向常量池
+```
 
 #### 4.3.2 toString()方法
 - 打印一个对象的引用时，实际就是调用该对象的toString()方法
@@ -204,7 +208,7 @@ public static Singleton1 getInstance() {
     ②显示的赋值、代码块、构造器
 **变量用static、final修饰**：全局常量
 
-### 4.5 抽象类(abstract)
+### 4.5 抽象应用(abstract)
 ```java
 abstract class Person{ // 抽象类
     public abstract void eat(); // 抽象方法
@@ -217,9 +221,59 @@ abstract class Person{ // 抽象类
     ③抽象方法所在类一定是抽象类
 #### 4.5.2. 修饰方法：抽象方法
     ①若子类继承抽象类，**没有重写**所有的抽象方法，意味着此类中仍有抽象类，则此类必须声明为抽象的！
-#### 4.5.3. **注意**：abstract 不能用来修饰属性、构造器、private、final、static(原因)
-    - 属性：本身就不能修饰
-    - 构造器：构造器不能被重写
-    - private:子类不能覆盖（或重写）声明为private的方法的
-    - final
-    - static:直接通过类调用但是却没有功能，所以不能
+#### 4.5.3. abstract的限制
+**注意**：abstract 不能用来修饰属性、构造器、private、final、static(原因)
+- 属性：本身就不能修饰
+- 构造器：构造器不能被重写
+- private:子类不能覆盖（或重写）声明为private的方法的
+- final
+- static:直接通过类调用但是却没有功能，所以不能
+#### 4.5.4 模板方法的设计模式
+- 就是抽象类的设计
+```java
+// 计算一个方法的运算时间
+abstract class Template {
+    public abstract void code();
+
+    public void spendTime(){
+        long start = System.currentTimeMillis();
+        code();
+        long end = System.currentTimeMillis();
+        System.out.println("花费的时间为：" + (end - start));
+    }
+}
+```
+
+### 4.6 接口(implements 和 interface)
+- 只含有常量和抽象方法(接口与类 是并行的一个概念)
+- 接口定义的是一种功能，可以被类所实现(**implements**)
+- 实现接口的类，必须重写其中的所有抽象方法，否则仍为抽象类
+- 类可以实现多个接口
+- 接口之间的关系：继承(entends) **多继承**
+    ```java
+    interface AA{
+        // 常量:所有常量都用(public static finnal)修饰，可省略
+        public static final int I = 12;
+        // 抽象方法:所有抽象方法都用(public abstract)修饰，可省略
+        public static void method();
+    }
+    ```
+#### 4.6.1 接口与具体的实现类之间也存在多态性
+- 虚拟方法的调用
+#### 4.6.2 接口“工厂方法”设计模式(FactoryMethod)
+
+#### 4.6.3 接口“代理模式”
+概述：为其他对象提供一种代理以控制对这个对象的访问
+
+### 4.7 内部类
+1. 类的内部再定义类
+2. 成员内部类×(声明在类内部且方法外的) vs 局部内部类(声明在类的方法里)
+#### 4.7.1 关于内部类要求掌握
+1. 如何创建成员(静态、非静态)内部类的对象
+2. 如何区分调用外部类、内部类的变量(尤其是变量重名时)
+```java
+Preson.this.name;
+```
+3. 局部内部类的使用(较少使用)
+
+## 5 异常处理
