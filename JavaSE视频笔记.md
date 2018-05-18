@@ -277,3 +277,186 @@ Preson.this.name;
 3. 局部内部类的使用(较少使用)
 
 ## 5 异常处理
+```java
+/*java.lang.Throwable
+    |-----Error:错误，程序中不进行处理
+    |-----Exception:异常，要求在编写程序时，就要考虑到对这些异常的处理
+*/
+```
+### 5.1 常见的异常(Exception)
+#### 5.1.1 编译时异常
+#### 5.1.2 常见运行时异常
+1. ArrayIndexOutOfBoundsException(数组越界异常)
+2. ArithmeticException(算术异常)
+3. ClassCastException(类型转换异常)
+4. NullPointerException(空指针异常)
+
+ ### 5.2 处理异常Exception的方法
+**抓抛模型**
+1. 抓：异常的处理：(1)try-catch-finally (2)throws + 异常的类型
+2. 抛：(自动的抛出 vs 手动的抛出(throw + 异常类的对象))
+    >(1)现成的异常类
+    >(2)自己创键的异常类
+#### 5.2.1 方法一
+1. finally可选(无论如何都会被执行)
+2. catch语句内部是对异常对象的处理
+    >1. getMessage();
+    >2. printStackTrace();
+3. 多个catch语句，从上往下匹配，执行完就退出，不继续执行
+4. 若多个异常类型是"并列"关系，顺序无关
+    若多个异常类型是"包含"关系，需将子类放在父类上面
+
+5. 对于运行异常来说可以不显示的进行处理
+    对于编译时异常，必须要显示的进行处理
+```java
+try{
+    //可能出现异常的代码
+}catch(Exception e){
+    //1. getMessage(); 获取错误信息
+    //2. printStackTrace(); 打印错误的堆栈信息
+}finally{
+    //一定要执行的代码
+}
+```
+
+#### 5.2.2 方法二(声明抛出异常)
+1. 在方法的声明处，显示的抛出该异常对象的类型(**throws**)
+```java
+    public void method2() throws IOException{}
+```
+2. 手动的抛出一个异常(当代码不是按照本意执行时，手动抛出异常)(**throw**)
+```java
+    throw new RuntimeException("传入类型有误");
+```
+3. 抛出的异常类型，若是RuntimeException，可以不显式的处理
+    若是一个Exception，必须显式的处理
+4. 子类重写的父类方法，子类方法抛出的异常类型不能比父类方法抛出的异常类型大
+
+#### 5.2.3 自定义一个异常类
+1. 自定义的异常类继承现有的异常类
+2. 提供一个序列号，提供几个重载的构造器(可以参考继承的类的结构)
+
+
+## 6 Java集合
+```java
+/*Collection接口
+    |-----Set接口:元素无序、不可重复的集合
+            |-----HashSet(主要实现类)
+            |-----LinkedHashSet
+            |-----TreeSet
+    |-----List接口:元素有序、可重复的集合
+            |-----ArrayList(主要的实现类)
+            |-----LinkedList
+            |-----Vector(古老的实现类，线程安全的)
+**Map接口：具有映射关系"key-value对"的集合
+    |-----HashMap
+    |-----LinkedHashMap
+    |-----TreeMap
+    |-----HashTable(子类：Properties)
+*/
+```
+
+### 6.1 集合的方法
+
+1. size()
+2. add(Object obj)
+3. addAll(Collection coll)
+4. isEmpty()
+5. clear()
+6. contains(Object obj)：是否包含(自定义类对象则是判断equals()方法)
+7. containsAll(Collection coll)
+8. retainAll(Collection coll):求当前集合与coll的共有元素，返回给当前集合
+9. remove（Object obj）:boolean
+10. removeAll(Collection coll )
+11. equals(Object obj):判断集合中的所有元素是否完全相同
+12. hashCode():计算hash值
+13. toArray():将集合转换成数组
+    Object[] obj = coll.toArray();
+14. **使用迭代器实现集合的遍历**
+iterator():返回一个Iterator接口实现类的对象,进而实现集合的遍历
+```java
+    Iterator iterator = coll3.iterator();
+    while(iterator.hasNext()){
+        System.out.println(iterator.next());//next()导致向下引用移动
+    }
+```
+15. **使用增强For循环实现集合的遍历**
+```java
+    for(Object i :coll3){   //注意：从"coll3"取一个元素赋值给”i“
+        System.out.println(i);
+    }
+```
+
+### 6.2 ArrayList 额外方法
+**ArrayList:List的主要实现类**
+1. void add(int index, Object ele):在指定的索引位置index添加元素ele
+2. boolean addAll(int index, Collection eles)
+3. Object get(int index):获取指定索引的元素
+4. Object remove(int index):删除指定索引位置的元素
+5. Object set(int index, Object ele):设置指定索引位置的元素为ele
+6. int indexOf(Object obj):返回obj在集合中首次出现的位置。没有的话，返回-1
+7. int lastIndexOf(Object obj)：返回obj在集合中最后一次出现的位置.没有的话，返回-1
+8. List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex结束的左闭右开一个子list
+
+List常用的方法：增(add(Object obj)) 删(remove) 改(set(int index,Object obj))
+            查(get(int index)) 插(add(int index, Object ele)) 长度(size())
+
+
+### 6.3 Set接口
+- 存储的元素是无序的(底层存储无序)，不可重复的
+- **说明**： 要求添加进Set中的元素所在的类，一定要重写equals()和hashCode()方法。进而保证Set中元素的不可重复性
+- Set中的元素是如何存储的呢？使用哈希算法
+    >添加Set对象时：①hashCode() -> ②equals()
+#### 6.3.1 HashSet(主要实现类)
+#### 6.3.2 LinkedHashSet
+- 使用链表维护了一个添加进集合中的顺序，导致当我们遍历LinkedHashSet集合元素时，按照添加进去的顺序遍历
+- 插入性能略低于HashSet,迭代访问时有较好的性能
+#### 6.3.3 TreeSet
+1. 向TreeSet中添加的元素必须是同一个类的
+2. 可以按照添加进集合中的元素的指定的顺序遍历(默认:从小到大) -> (需要实现Comparable接口的compareTo()方法)
+3. 当向TreeSet中添加自定义类的对象时，有两种排序方法(用哪种排序方法取决于能否修改要比较的类)：
+    >(1)自然排序:需要实现Comparable接口的compareTO()方法,在此方法中，指明按照自定义类的哪个属性进行排序
+    >(2)定制排序:
+    ①创键一个实现了Comparator接口的类对象
+    ②将此对象作为形参传递给TreeSet的构造器中
+    ③向TreeSet中添加Comparator接口中的compare方法中涉及的类的对象。
+    ```java
+    /*
+	 * TreeSet的定制排序： 见下面的步骤 compare()与hashCode()以及equals()三者保持一致！
+	 */
+	@Test
+	public void testTreeSet2() {
+		// 1.创建一个实现了Comparator接口的类对象
+		Comparator com = new Comparator() {
+			// 向TreeSet中添加Customer类的对象，在此compare()方法中，指明是按照Customer
+			// 的哪个属性排序的。
+			@Override
+			public int compare(Object o1, Object o2) {
+				if (o1 instanceof Customer && o2 instanceof Customer) {
+					Customer c1 = (Customer) o1;
+					Customer c2 = (Customer) o2;
+					int i = c1.getId().compareTo(c2.getId());
+					if (i == 0) {
+						return c1.getName().compareTo(c2.getName());
+					}
+					return i;
+				}
+				return 0;
+			}
+		};
+		// 2.将此对象作为形参传递给TreeSet的构造器中
+		TreeSet set = new TreeSet(com);
+		// 3.向TreeSet中添加Comparator接口中的compare方法中涉及的类的对象。
+		set.add(new Customer("AA", 1003));
+		set.add(new Customer("BB", 1002));
+		set.add(new Customer("GG", 1004));
+		set.add(new Customer("CC", 1001));
+		set.add(new Customer("DD", 1001));
+
+		for (Object str : set) {
+			System.out.println(str);
+		}
+	}
+    ```
+
+4. compareTo()方法 -> hashCode() -> equals()
